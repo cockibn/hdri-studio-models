@@ -1,0 +1,15 @@
+This repository redistributes a converted form of Depth Anything 3 Metric-Large.
+
+Depth Anything 3
+  Upstream code:    https://github.com/ByteDance-Seed/Depth-Anything-3
+  Upstream weights: https://huggingface.co/depth-anything/DA3METRIC-LARGE
+  Copyright the Depth Anything 3 authors (ByteDance Seed).
+  Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Changes made for HDRI Studio:
+  - Exported to ONNX (opset 17) at a fixed 336 x 252 portrait input with PyTorch.
+  - The network's final mono sky step (replacing sky depth by the 99th percentile of the other depths) is switched
+    off in the export; the HDRI Studio server applies the same step after inference.
+  - No weights were changed.
+
+HDRI Studio does not claim ownership of the Depth Anything 3 architecture or weights.
